@@ -9,7 +9,6 @@
       <router-link to="/jobs">jobs</router-link>
     </header>
     <main>
-      <img src="./assets/logo.png" alt="Vue.js PWA">
       <router-view></router-view>
     </main>
   </div>
