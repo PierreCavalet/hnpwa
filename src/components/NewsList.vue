@@ -1,12 +1,19 @@
 <template>
   <div class="news">
-    <span v-for="news in newsList" :key="news">{{ news }}</span>
+    <ul>
+    <news v-for="news in newsList" :key="news" :title="news"></news>
+    </ul>
   </div>
 </template>
 
 <script>
+import News from './News'
+
 export default {
   name: 'NewsList',
+  components: {
+    News
+  },
   data() {
     return {
       newsList: ['news1', 'news2', 'news3']
