@@ -1,5 +1,8 @@
+import { fetchIdsByType } from '../../../api'
+
 // initial state
 const state = {
+  items: [],
   lists: {
     top: [],
     new: [],
@@ -9,11 +12,23 @@ const state = {
   }
 }
 
-const getters = {}
+const getters = {
+  items: state => type => {
+    return state.lists[type].map(id => state.items[id])
+  }
+}
 
-const actions = {}
+const actions = {
+  FETCH_LIST_DATA: ({ commit, dispatch, state }, { type }) => {
+    fetchIdsByType(type).then(ids => commit('SET_LIST', { type, ids }))
+  }
+}
 
-const mutations = {}
+const mutations = {
+  SET_LIST: (state, { type, ids }) => {
+    state.lists[type] = ids
+  }
+}
 
 export default {
   state,
