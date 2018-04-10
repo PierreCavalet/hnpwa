@@ -7,10 +7,22 @@ Firebase.initializeApp({
 
 const api = Firebase.database().ref('/v0')
 
-export function fetchIdsByType(list) {
+function fetch(child) {
   return new Promise((resolve, reject) => {
-    api.child(list).once('value', snapshot => {
+    api.child(child).once('value', snapshot => {
       resolve(snapshot.val())
     })
   })
+}
+
+export function fetchIdsByType(list) {
+  return fetch(list)
+}
+
+export function fetchItems(ids) {
+  return Promise.all(ids.map(id => fetchItem(id)))
+}
+
+export function fetchItem(id) {
+  return fetch(`item/${id}`)
 }
