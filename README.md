@@ -1,10 +1,12 @@
 # vue-hnpwa
 
-> A Vue.js project
+> Hacker news clone based on the HNPWA initiative. This project is developed to learn more about PWA with Vue.js.
+
+Continuous deployment at: https://vue-hnpwa.netlify.com/
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 
@@ -13,18 +15,4 @@ npm run dev
 
 # build for production with minification
 npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
